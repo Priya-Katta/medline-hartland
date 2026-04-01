@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Priya Katta, Associate Supply Chain Analyst, Medline</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --navy:#003087;--teal:#0097a7;--red:#c8102e;
+  --white:#ffffff;--off:#f7f9fc;--light:#eef1f8;
+  --text:#0d1b3e;--muted:#6b7a99;--border:rgba(0,48,135,0.1);
+}
+body{font-family:'Lato',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 64px;height:62px;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);}
+.logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);}
+.logo span{color:var(--teal);}
+.nav-r{display:flex;gap:32px;align-items:center;}
+.nav-r a{font-size:0.73rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-r a:hover{color:var(--navy);}
+.nbtn{background:var(--navy)!important;color:var(--white)!important;padding:8px 20px;}
+
+/* HERO, YOU ARE THE STAR */
+.hero{padding:120px 64px 80px;background:var(--white);position:relative;overflow:hidden;}
+.hero-line{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--teal));}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-top{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:start;margin-bottom:64px;}
+.hero-identity{}
+.hero-role{font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:900;line-height:0.95;color:var(--text);letter-spacing:-0.02em;}
+.hero-name span{color:var(--navy);}
+.hero-title{font-size:1rem;font-weight:300;color:var(--muted);margin-top:16px;line-height:1.6;}
+.hero-title strong{color:var(--text);font-weight:700;}
+.hero-badge{background:var(--off);border:1px solid var(--border);padding:20px 28px;text-align:right;min-width:240px;}
+.badge-label{font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:6px;}
+.badge-val{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy);}
+.badge-sub{font-size:0.72rem;font-weight:300;color:var(--muted);margin-top:4px;}
+
+/* BIG METRICS */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.metric{background:var(--white);padding:36px 32px;position:relative;overflow:hidden;transition:background 0.2s;}
+.metric:hover{background:var(--off);}
+.metric::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.metric:hover::after{transform:scaleX(1);}
+.m-num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:8px;}
+.m-label{font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+.m-sub{font-size:0.74rem;font-weight:300;color:var(--muted);line-height:1.5;}
+
+.hero-btns{display:flex;gap:14px;margin-top:40px;}
+.btn-n{background:var(--navy);color:var(--white);padding:13px 30px;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-n:hover{background:#001f5c;}
+.btn-o{background:transparent;color:var(--navy);border:1.5px solid var(--navy);padding:12px 30px;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-o:hover{background:var(--navy);color:var(--white);}
+
+/* SECTIONS */
+section{padding:80px 64px;}
+.alt{background:var(--off);}
+.dark{background:var(--navy);}
+.s-inner{max-width:1100px;margin:0 auto;}
+.s-label{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.dark .s-label{color:rgba(255,255,255,0.45);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.1;margin-bottom:40px;}
+.dark h2{color:var(--white);}
+
+/* ABOUT ME */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.about-text p{font-size:0.92rem;font-weight:300;color:var(--muted);line-height:1.85;margin-bottom:16px;}
+.about-text p strong{color:var(--text);font-weight:700;}
+.about-facts{display:flex;flex-direction:column;gap:16px;}
+.fact{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--off);border-left:3px solid var(--navy);}
+.fact-ico{font-size:1.1rem;flex-shrink:0;margin-top:2px;}
+.fact-t{font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:2px;}
+.fact-s{font-size:0.78rem;font-weight:300;color:var(--muted);}
+
+/* MATCH GRID */
+.match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.1);}
+.match-card{background:var(--navy);padding:32px;border-bottom:3px solid transparent;transition:border-color 0.2s;}
+.match-card:hover{border-bottom-color:var(--teal);}
+.mc-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:rgba(255,255,255,0.07);margin-bottom:6px;}
+.mc-t{font-size:0.85rem;font-weight:700;color:var(--white);margin-bottom:10px;}
+.mc-b{font-size:0.78rem;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.7;}
+.mc-b strong{color:rgba(0,151,167,0.85);font-weight:400;}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.story{background:var(--white);border:1px solid var(--border);padding:32px;position:relative;overflow:hidden;transition:box-shadow 0.2s;}
+.story::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--teal));}
+.story:hover{box-shadow:0 8px 28px rgba(0,48,135,0.09);}
+.st-tag{font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:block;}
+.st-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.3;}
+.st-body{font-size:0.79rem;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:18px;}
+.st-result{display:flex;gap:12px;align-items:center;background:var(--off);padding:11px 14px;}
+.sr-n{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--navy);white-space:nowrap;}
+.sr-t{font-size:0.73rem;font-weight:300;color:var(--muted);line-height:1.4;}
+
+/* CTA */
+.cta-wrap{text-align:center;}
+.cta-wrap h2{color:var(--white);}
+.cta-wrap p{font-size:0.88rem;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.8;max-width:440px;margin:0 auto 32px;}
+.cta-wrap p strong{color:var(--white);font-weight:400;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-w{background:var(--white);color:var(--navy);padding:13px 28px;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-w:hover{background:var(--teal);color:var(--white);}
+.btn-go{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.25);padding:12px 28px;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-go:hover{border-color:var(--white);}
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+.chip{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:8px 16px;font-size:0.76rem;font-weight:300;color:rgba(255,255,255,0.5);text-decoration:none;transition:all 0.2s;}
+.chip:hover{color:var(--white);border-color:rgba(255,255,255,0.3);}
+.chi{color:var(--teal);}
+
+.float{position:fixed;bottom:26px;right:26px;z-index:300;background:var(--teal);color:var(--white);padding:11px 18px;display:flex;align-items:center;gap:8px;font-size:0.74rem;font-weight:700;letter-spacing:0.05em;text-decoration:none;box-shadow:0 4px 18px rgba(0,151,167,0.4);transition:background 0.2s;}
+.float:hover{background:#007a87;}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--white);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+@media(max-width:900px){
+  nav{padding:0 24px;}.nav-r{display:none;}
+  .hero,.hero-top{padding:80px 24px 40px;}
+  section{padding:60px 24px;}
+  .hero-top,.about-grid{grid-template-columns:1fr;}
+  .hero-badge{text-align:left;}
+  .metrics,.match-grid,.story-grid{grid-template-columns:1fr;}
+  .metric{border-right:none;border-bottom:1px solid var(--border);}
+}
+
+/* 3D EFFECTS */
+.metric {
+  transform-style: preserve-3d;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.2s;
+}
+.metric:hover {
+  transform: perspective(600px) rotateX(4deg) translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,48,135,0.1);
+}
+.story {
+  transform-style: preserve-3d;
+  transition: transform 0.3s, box-shadow 0.2s;
+}
+.story:hover {
+  transform: perspective(600px) rotateY(-2deg) translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,48,135,0.1), 4px 4px 0 rgba(0,48,135,0.08);
+}
+.match-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s, border-color 0.2s;
+}
+.match-card:hover {
+  transform: perspective(500px) rotateX(3deg) translateY(-3px);
+}
+.fact {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.fact:hover {
+  transform: translateX(4px);
+  box-shadow: 4px 0 0 var(--teal);
+}
+.tool, .tool-box {
+  transform-style: preserve-3d;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.2s;
+}
+.tool:hover, .tool-box:hover {
+  transform: translateY(-6px) perspective(400px) rotateX(4deg);
+  box-shadow: 0 14px 28px rgba(0,48,135,0.12), 0 3px 0 var(--teal);
+  border-color: var(--navy);
+}
+/* Hero name 3D text shadow */
+.hero-name {
+  text-shadow: 3px 3px 0 rgba(0,48,135,0.08), 6px 6px 0 rgba(0,48,135,0.04);
+}
+/* Stats 3D shadow */
+.metrics {
+  box-shadow: 0 8px 32px rgba(0,48,135,0.08), 0 2px 0 rgba(0,48,135,0.12);
+}
+/* Role cards 3D */
+.role-box, .role-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.role-box:hover, .role-card:hover {
+  transform: perspective(600px) rotateY(-1.5deg) translateY(-4px);
+  box-shadow: 8px 8px 0 rgba(0,48,135,0.08), 0 16px 32px rgba(0,48,135,0.1);
+}
+
+
+/* ENHANCED 3D */
+
+/* Rotating cube in hero */
+.hero-cube-wrap {
+  position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
+  width: 320px; height: 320px; perspective: 900px;
+  pointer-events: none;
+}
+.hero-cube {
+  width: 160px; height: 160px;
+  position: absolute; top: 50%; left: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%,-50%) rotateX(18deg) rotateY(0deg);
+  animation: cubeSpin 22s linear infinite;
+}
+@keyframes cubeSpin { to { transform: translate(-50%,-50%) rotateX(18deg) rotateY(360deg); } }
+.cube-face {
+  position: absolute; width: 160px; height: 160px;
+  border: 1px solid rgba(0,48,135,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(0,48,135,0.4);
+  font-family: 'Lato', sans-serif;
+}
+.cf-front  { background: rgba(0,48,135,0.04); transform: translateZ(80px); }
+.cf-back   { background: rgba(0,48,135,0.02); transform: rotateY(180deg) translateZ(80px); }
+.cf-left   { background: rgba(0,151,167,0.03); transform: rotateY(-90deg) translateZ(80px); }
+.cf-right  { background: rgba(0,151,167,0.03); transform: rotateY(90deg) translateZ(80px); }
+.cf-top    { background: rgba(0,48,135,0.02); transform: rotateX(90deg) translateZ(80px); }
+.cf-bottom { background: rgba(0,48,135,0.01); transform: rotateX(-90deg) translateZ(80px); }
+.cube-ring {
+  position: absolute; top: 50%; left: 50%;
+  border-radius: 50%; border: 1px solid;
+  transform: translate(-50%,-50%);
+  animation: ringPulse 3s ease-in-out infinite;
+}
+.cr1 { width: 220px; height: 220px; border-color: rgba(0,48,135,0.1); animation-delay: 0s; }
+.cr2 { width: 280px; height: 280px; border-color: rgba(0,48,135,0.06); animation-delay: 1s; }
+.cr3 { width: 320px; height: 320px; border-color: rgba(0,151,167,0.04); animation-delay: 2s; }
+@keyframes ringPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+/* Deeper metric card 3D */
+.metric:hover {
+  transform: perspective(500px) rotateX(6deg) rotateY(-2deg) translateY(-6px) !important;
+  box-shadow: 6px 14px 32px rgba(0,48,135,0.14), 0 3px 0 var(--teal) !important;
+}
+
+/* Deeper story card 3D */
+.story:hover {
+  transform: perspective(500px) rotateY(-3deg) rotateX(2deg) translateY(-6px) !important;
+  box-shadow: 10px 16px 40px rgba(0,48,135,0.12), 4px 4px 0 rgba(0,48,135,0.1) !important;
+}
+
+/* Match card deeper */
+.match-card:hover {
+  transform: perspective(400px) rotateX(5deg) rotateY(2deg) translateY(-4px) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2) !important;
+}
+
+/* Tool card deeper */
+.tool:hover, .tool-box:hover {
+  transform: translateY(-8px) perspective(400px) rotateX(6deg) rotateY(-2deg) !important;
+  box-shadow: 6px 16px 32px rgba(0,48,135,0.15), 0 4px 0 var(--teal) !important;
+}
+
+/* Fact hover deeper */
+.fact:hover {
+  transform: translateX(6px) perspective(400px) rotateY(2deg) !important;
+  box-shadow: -4px 4px 16px rgba(0,151,167,0.1) !important;
+}
+
+/* Stats bar 3D lift */
+.metrics {
+  transform: perspective(1000px) rotateX(1deg);
+  transform-origin: top center;
+  box-shadow: 0 12px 40px rgba(0,48,135,0.1), 0 4px 0 rgba(0,48,135,0.15) !important;
+}
+
+/* Hero name deeper text shadow */
+.hero-name {
+  text-shadow: 2px 2px 0 rgba(0,48,135,0.1), 4px 4px 0 rgba(0,48,135,0.07), 6px 6px 0 rgba(0,48,135,0.04), 8px 8px 0 rgba(0,48,135,0.02) !important;
+}
+
+/* Section divider 3D border */
+.alt {
+  box-shadow: inset 0 4px 12px rgba(0,48,135,0.04), inset 0 -4px 12px rgba(0,48,135,0.04);
+}
+
+/* Role box deeper */
+.role-box:hover, .role-card:hover {
+  transform: perspective(500px) rotateY(-2deg) rotateX(2deg) translateY(-6px) !important;
+  box-shadow: 10px 10px 0 rgba(0,48,135,0.08), 0 20px 40px rgba(0,48,135,0.12) !important;
+}
+
+/* Badge 3D */
+.hero-badge {
+  box-shadow: 6px 6px 0 rgba(0,48,135,0.08), 12px 12px 0 rgba(0,48,135,0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hero-badge:hover {
+  transform: perspective(400px) rotateY(-3deg) translateY(-3px);
+  box-shadow: 10px 10px 0 rgba(0,48,135,0.1), 0 16px 32px rgba(0,48,135,0.12);
+}
+
+</style>
+</head>
+<body>
+
+<a href="mailto:kattasa1@msu.edu?subject=Medline Associate Supply Chain Analyst - Hartland" class="float">
+  <div class="fdot"></div>Available this week
+</a>
+
+<nav>
+  <div class="logo">Sai Priya <span>Katta</span></div>
+  <div class="nav-r">
+    <a href="#about">About</a>
+    <a href="#match">Why Me</a>
+    <a href="#stories">Stories</a>
+    <a href="#contact" class="nbtn">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-line"></div>
+  <div class="hero-cube-wrap" aria-hidden="true">
+    <div class="cube-ring cr1"></div>
+    <div class="cube-ring cr2"></div>
+    <div class="cube-ring cr3"></div>
+    <div class="hero-cube">
+      <div class="cube-face cf-front">Supply Chain</div>
+      <div class="cube-face cf-back">Analytics</div>
+      <div class="cube-face cf-left">Procurement</div>
+      <div class="cube-face cf-right">Planning</div>
+      <div class="cube-face cf-top">Reporting</div>
+      <div class="cube-face cf-bottom">Inventory</div>
+    </div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="hero-identity">
+        <div class="hero-role">Applying for, Associate Supply Chain Analyst, Medline Industries, Hartland WI</div>
+        <div class="hero-name">Sai Priya<br><span>Katta</span></div>
+        <div class="hero-title">
+          <strong>Supply Chain MBA Candidate</strong> at Michigan State University, graduating May 2026.<br>
+          3+ years resolving procurement, inventory, and vendor management challenges across manufacturing and construction operations.
+        </div>
+        <div class="hero-btns">
+          <a href="#match" class="btn-n">See Why I Fit</a>
+          <a href="#contact" class="btn-o">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-label">MBA GPA</div>
+        <div class="badge-val">3.77</div>
+        <div class="badge-sub">Michigan State University<br>Supply Chain Management</div>
+      </div>
+    </div>
+
+    <!-- KEY METRICS -->
+    <div class="metrics">
+      <div class="metric">
+        <div class="m-num">$70K+</div>
+        <div class="m-label">Discrepancies resolved</div>
+        <div class="m-sub">Through ERP audits and inventory reconciliation across 30+ client engagements</div>
+      </div>
+      <div class="metric">
+        <div class="m-num">50%</div>
+        <div class="m-label">Rush orders eliminated</div>
+        <div class="m-sub">By building week-ahead procurement trackers that flagged supply gaps early</div>
+      </div>
+      <div class="metric">
+        <div class="m-num">$50K+</div>
+        <div class="m-label">Compliance risk mitigated</div>
+        <div class="m-sub">Identified through structured supplier performance and procurement audits</div>
+      </div>
+      <div class="metric">
+        <div class="m-num">10+</div>
+        <div class="m-label">Vendors managed</div>
+        <div class="m-sub">End-to-end RFQ, PO execution, and supplier coordination in Tally ERP</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="alt">
+  <div class="s-inner">
+    <div class="s-label">About Me</div>
+    <h2>Who I am.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a <strong>Supply Chain MBA candidate at Michigan State University</strong> with 3+ years of hands-on experience in procurement, vendor management, and inventory operations across manufacturing, trading, and construction sectors in India.</p>
+        <p>My work has always been analytical and operational at the same time. I am not just someone who reads data, I build the systems, trackers, and reports that make supply chain decisions faster and more accurate for the teams that depend on them.</p>
+        <p>At Medline, I am excited to bring that same approach to a healthcare supply chain environment where getting procurement right matters not just for the business, but for the patients and providers at the end of the chain.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact">
+          <div class="fact-ico">🎓</div>
+          <div>
+            <div class="fact-t">Michigan State University, MBA, Supply Chain</div>
+            <div class="fact-s">GPA 3.77 · VP, Graduate Supply Chain Management Association · May 2026</div>
+          </div>
+        </div>
+        <div class="fact">
+          <div class="fact-ico">📋</div>
+          <div>
+            <div class="fact-t">Y P Reddy and Associates, Audit Associate</div>
+            <div class="fact-s">Procurement and inventory audits across 30+ manufacturing and trading clients · 2021 to 2024</div>
+          </div>
+        </div>
+        <div class="fact">
+          <div class="fact-ico">🏗️</div>
+          <div>
+            <div class="fact-t">Sai Manasa Homes, Supply Chain Analyst</div>
+            <div class="fact-s">End-to-end RFQ, PO execution, vendor management and inventory planning across 4 construction projects · 2022 to 2024</div>
+          </div>
+        </div>
+        <div class="fact">
+          <div class="fact-ico">📍</div>
+          <div>
+            <div class="fact-t">East Lansing, MI, Open to relocation</div>
+            <div class="fact-s">Willing to relocate anywhere in the US · Available from June 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATCH -->
+<section id="match" class="dark">
+  <div class="s-inner">
+    <div class="s-label">Role Requirements</div>
+    <h2>What Medline needs.<br>What I bring.</h2>
+    <div class="match-grid">
+      <div class="match-card">
+        <div class="mc-n">01</div>
+        <div class="mc-t">PO Execution and Vendor Management</div>
+        <div class="mc-b">Managed end-to-end RFQ processes across 4 projects, executed POs in Tally ERP, and coordinated with <strong>10+ suppliers</strong> on confirmations, deliveries, and issue resolution.</div>
+      </div>
+      <div class="match-card">
+        <div class="mc-n">02</div>
+        <div class="mc-t">Inventory Monitoring and MRP Execution</div>
+        <div class="mc-b">Built week-ahead Excel trackers that monitored demand and flagged supply risks early. <strong>Reduced last-minute emergency orders by 50%</strong> across all active projects.</div>
+      </div>
+      <div class="match-card">
+        <div class="mc-n">03</div>
+        <div class="mc-t">Supplier Performance Tracking</div>
+        <div class="mc-b">Built supplier evaluation frameworks for 30+ clients, tracked adherence to delivery schedules and compliance requirements, and identified <strong>$50K+ in risk exposure</strong>.</div>
+      </div>
+      <div class="match-card">
+        <div class="mc-n">04</div>
+        <div class="mc-t">ERP and Master Data Management</div>
+        <div class="mc-b">Managed vendor and inventory data in Tally ERP. Identified and corrected ERP errors including phantom stock and pricing mismatches that caused <strong>$70K+ in discrepancies</strong>.</div>
+      </div>
+      <div class="match-card">
+        <div class="mc-n">05</div>
+        <div class="mc-t">Bid and RFP Support</div>
+        <div class="mc-b">Ran structured RFQ processes comparing 3 to 5 vendors per cycle on price, availability, and lead time. Created <strong>Excel cost comparison matrices</strong> used across all projects.</div>
+      </div>
+      <div class="match-card">
+        <div class="mc-n">06</div>
+        <div class="mc-t">Cross-Functional Coordination</div>
+        <div class="mc-b">Coordinated across procurement, finance, and operations for 30+ client engagements. Every deliverable was structured for <strong>leadership action and cross-team alignment</strong>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section id="stories" class="alt">
+  <div class="s-inner">
+    <div class="s-label">Featured Work</div>
+    <h2>Stories from<br>my experience.</h2>
+    <div class="story-grid">
+      <div class="story">
+        <span class="st-tag">Procurement and Vendor Management</span>
+        <div class="st-title">RFQ Framework That Standardized Vendor Selection Across 4 Projects</div>
+        <div class="st-body">Each project manager was selecting vendors differently with no consistent criteria and no audit trail. I built a structured RFQ process comparing 3 to 5 vendors per cycle on price, availability, and lead time, and created Excel cost comparison matrices used across all active projects.</div>
+        <div class="st-result">
+          <div class="sr-n">4 projects</div>
+          <div class="sr-t">standardized under one procurement framework with documented vendor selection</div>
+        </div>
+      </div>
+      <div class="story">
+        <span class="st-tag">Inventory Monitoring and Planning</span>
+        <div class="st-title">Week-Ahead Tracker That Cut Emergency Procurement Orders in Half</div>
+        <div class="st-body">Materials ran low without warning across active projects and emergency orders had become routine. I analyzed demand patterns, identified recurring shortage triggers, and built a tracker that flagged upcoming material needs one week ahead of when they would become urgent.</div>
+        <div class="st-result">
+          <div class="sr-n">50%</div>
+          <div class="sr-t">reduction in last-minute emergency procurement orders</div>
+        </div>
+      </div>
+      <div class="story">
+        <span class="st-tag">ERP and Data Reconciliation</span>
+        <div class="st-title">Power BI Dashboard That Resolved $30K in Frozen Funding in One Week</div>
+        <div class="st-body">Billing disputes had frozen project disbursements entirely. I built a Power BI dashboard pulling from Tally ERP and Excel, reconciling spend line by line, and surfacing the exact discrepancies. Leadership had a clear view within 7 days and funding was released immediately.</div>
+        <div class="st-result">
+          <div class="sr-n">$30K+</div>
+          <div class="sr-t">unblocked within 7 days of dashboard going live</div>
+        </div>
+      </div>
+      <div class="story">
+        <span class="st-tag">Supplier Compliance and Risk</span>
+        <div class="st-title">Audit Framework That Identified $50K in Supplier Risk Across 30+ Clients</div>
+        <div class="st-body">Most clients had no structured way to track supplier delivery commitments or regulatory compliance. Leading a 5-person audit team, I built evaluation frameworks, identified $50K+ in compliance risk exposure, and delivered corrective action roadmaps with accountability checkpoints.</div>
+        <div class="st-result">
+          <div class="sr-n">$50K+</div>
+          <div class="sr-t">in compliance risk identified and routed to corrective action</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="dark">
+  <div class="s-inner">
+    <div class="cta-wrap">
+      <div class="s-label" style="color:rgba(255,255,255,0.4);text-align:center;margin-bottom:10px;">Let's Connect</div>
+      <h2>Ready to contribute<br>to Medline's supply chain.</h2>
+      <p>I would love a <strong>20-minute call this week</strong> to walk through any of these stories or learn more about what this role needs right now.</p>
+      <div class="cta-btns">
+        <a href="mailto:kattasa1@msu.edu?subject=Medline Associate Supply Chain Analyst - Hartland" class="btn-w">Email Me This Week</a>
+        <a href="tel:+15175997312" class="btn-go">Call: (517) 599-7312</a>
+      </div>
+      <div class="chips">
+        <a href="https://www.linkedin.com/in/saipriyakatta/" class="chip" target="_blank"><span class="chi">↗</span> LinkedIn</a>
+        <a href="https://priya-katta.github.io/Portfolio" class="chip" target="_blank"><span class="chi">↗</span> GXO Portfolio</a>
+        <span class="chip"><span class="chi">✉</span> kattasa1@msu.edu</span>
+        <span class="chip"><span class="chi">📍</span> Open to relocation anywhere in the US</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
